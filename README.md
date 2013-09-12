@@ -6,6 +6,9 @@ Fork of http://code.google.com/p/php-snappy.
 This repository is intended to provide a better documentation to simplify use of the
 [snappy](http://code.google.com/p/snappy/) API with [PHP](http://www.php.net).
 
+You may want to use this implementation as well: https://github.com/krakjoe/snappy/.
+It is really similar but offers a `function snappy_validate($data);` which might be rather useful.
+
 Installation
 ------------
 
