@@ -79,7 +79,11 @@ static PHP_FUNCTION(snappy_compress)
 
     if (snappy_compress(data, data_len, output, &output_len) == SNAPPY_OK)
     {
+#if ZEND_MODULE_API_NO > 20131226
+        RETVAL_STRINGL(output, output_len);
+#else
         RETVAL_STRINGL(output, output_len, 1);
+#endif
     }
     else
     {
@@ -117,7 +121,11 @@ static PHP_FUNCTION(snappy_uncompress)
 
     if (snappy_uncompress(data, data_len, output, &output_len) == SNAPPY_OK)
     {
+#if ZEND_MODULE_API_NO > 20131226
+        RETVAL_STRINGL(output, output_len);
+#else
         RETVAL_STRINGL(output, output_len, 1);
+#endif
     }
     else
     {
